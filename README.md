@@ -113,3 +113,8 @@ Using reflection is ugly but sometimes has some benefits. For example methods th
 (e.g. WindowsRegEnumValue and WindowsRegEnumKeyEx). So methods childrenNamesSpi() and keysSpi() are almost duplicate in WindowsPreferences. 
 Reflection allows creating one implementation for both cases.
 
+
+## References
+
+First version of this library was presented first time at January, 2011 in my blog. Now I decided to move this library to github. This process included name changes, more tests and
+some improvements of error handling. 
