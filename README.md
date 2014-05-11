@@ -117,5 +117,11 @@ Reflection allows creating one implementation for both cases.
 
 ## References
 
-First version of this library was presented first time at January, 2011 in my blog. Now I decided to move this library to github. This process included name changes, more tests and
-some improvements of error handling. 
+First version of this library was presented first time at January, 2011 in my [blog](http://alexradzin.blogspot.co.il/2011/01/access-windows-registry-with-pure-java.html). 
+But recently I decided to publish the code at github. This process included name changes, more tests and some improvements of error handling. 
+
+
+### Similar implementations
+
+* [http://lenkite.blogspot.com/2008/05/access-windows-registry-using-java.html]
+* [http://www.davidc.net/programming/java/reading-windows-registry-java-without-jni]
