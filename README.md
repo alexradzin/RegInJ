@@ -44,13 +44,13 @@ Therefore it is designed as a sigleton. User `Registry.getInstance()` to access 
 ### Methods
 
 Methods are simple and have self-explainable names:
-* keys(Hive hive, String path)
-* values(Hive hive, String path)
-* get(Hive hive, String path, String name)
-* createKey(Hive hive, String path)
-* put(Hive hive, String path, String name, String value)
-* removeKey(Hive hive, String path)
-* removeValue(Hive hive, String path, String name)
+* `keys(Hive hive, String path)`
+* `values(Hive hive, String path)`
+* `get(Hive hive, String path, String name)`
+* `createKey(Hive hive, String path)`
+* `put(Hive hive, String path, String name, String value)`
+* `removeKey(Hive hive, String path)`
+* `removeValue(Hive hive, String path, String name)`
 
 
 ### Exceptions
@@ -63,11 +63,12 @@ library are caught.
 So far author found only several error codes that can be produced when using the library. The error codes and their mapping 
 to exception is summarized in the following table. 
 
-Error 						|	Code	| Exception						| Text				| Description
-FILE_NOT_FOUND				|	2		| FileNotFoundException 		| Path is not found	| Key or value name does not exist
-ACCESS_DENIED				|	5		| AccessDeniedException 		| Access denied		| This operation is forbidden for current user
-ERROR_INVALID_HANDLE		|	6		| FileNotFoundException 		| Invalid handle	| Wrong registry hive (e.g. HKEY_PERFORMANCE_DATA)
-ERROR_CALL_NOT_IMPLEMENTED	| 120 		| UnsupportedOperationException | Not implemented 	| Wrong registry hive (e.g. HKEY_DYN_DATA)
+| Error 					|	Code	| Exception							| Text				| Description										|
+| ------------------------- | --------- | ---------------------------------	| ----------------- | ------------------------------------------------- |
+FILE_NOT_FOUND				|	2		| `FileNotFoundException` 			| Path is not found	| Key or value name does not exist
+ACCESS_DENIED				|	5		| `AccessDeniedException` 			| Access denied		| This operation is forbidden for current user
+ERROR_INVALID_HANDLE		|	6		| `FileNotFoundException` 			| Invalid handle	| Wrong registry hive (e.g. `HKEY_PERFORMANCE_DATA`)
+ERROR_CALL_NOT_IMPLEMENTED	| 120 		| `UnsupportedOperationException`	| Not implemented 	| Wrong registry hive (e.g. `HKEY_DYN_DATA`)
 
 
 ## Limitations
