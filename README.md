@@ -95,7 +95,7 @@ and found the following issues.
 1. Theoretically there are 9 hives: `HKEY_CLASSES_ROOT`, `HKEY_CURRENT_USER`, `HKEY_LOCAL_MACHINE`, `HKEY_USERS`, `HKEY_PERFORMANCE_DATA`, `HKEY_CURRENT_CONFIG`, `HKEY_DYN_DATA`, `HKEY_PERFORMANCE_TEXT`, `HKEY_PERFORMANCE_NLSTEXT`.
    However some of them are not available on all platforms. For example HKEY_DYN_DATA is implemented on Windows 9x and ME only. 
    Take a look on [this article](http://en.wikipedia.org/wiki/Windows_Registry) for more details. 
-2. Microsoft is constantly improves its security limitation. Some operations may work on one version of windows and throw "Access denied" on others.
+2. Microsoft is constantly improving its security. Some operations may work on one version of Windows and throw "Access denied" on others.
    For example on Windows 8 user without administrative privileges cannot write to HKEY_LOCAL_MACHINE. Tests that worked well on Windows XP threw "Access denied" on Windows 8.
 
 The incompatibility issues may cause `ACCESS_DENIED`, `ERROR_INVALID_HANDLE` or `ERROR_CALL_NOT_IMPLEMENTED` errors (see *Exceptions* chapter for details).
