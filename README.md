@@ -81,22 +81,25 @@ So, this is the limitation of current library. However hopefully this is enough 
 
 ### Compatibility with JRE version
 
-Since RegInJ performs calls to not public methods of package protected class it depends on the JDK version. 
-Fortunately preferences support was introduced in JDK 1.4 and have not been changed until now. So, hopefully
-RegInJ will work on all JRE versions starting from 1.4. In fact it was developed with JRE 1.6 and refatrored now
+Since RegInJ calls non-public methods of package protected class it depends on the JDK version. 
+Fortunately preferences support was introduced in JDK 1.4 and has not been changed until now. So, hopefully
+RegInJ will work on all JRE versions starting from 1.4. In fact it was developed with JRE 1.6 and re-factored now
 with JRE 1.7 without any compatibility problems. Author will do his best effort to verify that other versions work as well.
 
 
 ### Compatibility with OS version
 
-RegInJ calls native windows API, so compatibility with different versions of Windows may become and issue. However hopefully
-this will work on most platforms. Author tried it on Windows XP (professional and home edition) and Windows 8.
-The following compatibility problems have been found.
-1. Theoretically there are 9 hives: `HKEY_CLASSES_ROOT, HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_PERFORMANCE_DATA, HKEY_CURRENT_CONFIG, HKEY_DYN_DATA, HKEY_PERFORMANCE_TEXT, HKEY_PERFORMANCE_NLSTEXT`.
+RegInJ calls native windows API, so compatibility with different versions of Windows may become an issue. Author tried it on Windows XP (professional and home edition) and Windows 8
+and found the following issues.
+
+1. Theoretically there are 9 hives: `HKEY_CLASSES_ROOT`, `HKEY_CURRENT_USER`, `HKEY_LOCAL_MACHINE`, `HKEY_USERS`, `HKEY_PERFORMANCE_DATA`, `HKEY_CURRENT_CONFIG`, `HKEY_DYN_DATA`, `HKEY_PERFORMANCE_TEXT`, `HKEY_PERFORMANCE_NLSTEXT`.
    However some of them are not available on all platforms. For example HKEY_DYN_DATA is implemented on Windows 9x and ME only. 
-   Take a look on [this article](http://en.wikipedia.org/wiki/Windows_Registry) for more details.
+   Take a look on [this article](http://en.wikipedia.org/wiki/Windows_Registry) for more details. 
 2. Microsoft is constantly improves its security limitation. Some operations may work on one version of windows and throw "Access denied" on others.
    For example on Windows 8 user without administrative privileges cannot write to HKEY_LOCAL_MACHINE. Tests that worked well on Windows XP threw "Access denied" on Windows 8.
+
+The incompatibility issues may cause `ACCESS_DENIED`, `ERROR_INVALID_HANDLE` or `ERROR_CALL_NOT_IMPLEMENTED` errors (see *Exceptions* chapter for details).
+  
 
 
 ## Benifits
